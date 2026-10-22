@@ -1,29 +1,157 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f2e9">
+  <meta name="description" content="NINI CHILL — a little space for music, rest, and calm moments.">
   <title>NINI CHILL</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      background: #f5f2e9;
+      color: #343c35;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 6%;
+      border-bottom: 1px solid #dedfd3;
+    }
+    .brand {
+      color: #34463b;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    .top-label, .eyebrow {
+      color: #718273;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+    .container {
+      max-width: 760px;
+      margin: auto;
+      padding: 28px 18px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 24px;
+    }
+    .cover-image {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+    h1 {
+      font-size: clamp(30px, 7vw, 48px);
+      line-height: 1.12;
+      margin: 12px 0;
+    }
+    h1 span { color: #718777; }
+    .hero-text p:not(.eyebrow) {
+      color: #737970;
+      line-height: 1.7;
+    }
+    .music-section, .comments-section {
+      margin-top: 38px;
+      padding: 24px;
+      background: #fffdf7;
+      border: 1px solid #e5e4d9;
+      border-radius: 20px;
+    }
+    h2 { margin: 8px 0 18px; font-size: 24px; }
+    .track-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px;
+      background: #f0f1e8;
+      border-radius: 14px;
+    }
+    .music-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      background: #dce3d6;
+      border-radius: 12px;
+      font-size: 22px;
+    }
+    .track-info { flex: 1; min-width: 0; }
+    .track-info h3 { margin: 0 0 5px; font-size: 16px; }
+    .track-info p { margin: 0; color: #7b8178; font-size: 13px; }
+    .play-button, .comment-button {
+      border: 0;
+      border-radius: 999px;
+      background: #526b58;
+      color: white;
+      padding: 12px 17px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .small-note, .description { color: #7b8178; font-size: 13px; line-height: 1.6; }
+    .comments-section label {
+      display: block;
+      margin: 16px 0 7px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .comments-section input, .comments-section textarea {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d8dcd1;
+      border-radius: 10px;
+      background: #fff;
+      color: #343c35;
+      font: inherit;
+    }
+    .comments-section textarea { resize: vertical; }
+    .comment-button { margin-top: 14px; }
+    .comment-button:disabled { opacity: .6; }
+    #comment-list { margin-top: 18px; overflow-wrap: anywhere; }
+    #comment-list article p { white-space: pre-wrap; line-height: 1.5; }
+    #comment-list article small { color: #7b8178; }
+    footer {
+      text-align: center;
+      padding: 25px 12px 35px;
+      color: #7b8178;
+      font-size: 13px;
+    }
+    @media (max-width: 540px) {
+      .hero { grid-template-columns: 1fr; }
+      .cover-image { max-height: 280px; }
+      .hero-text { padding: 0 4px; }
+      .music-section, .comments-section { padding: 18px; }
+      .top-label { font-size: 9px; letter-spacing: 1px; }
+    }
+  </style>
 </head>
 <body>
-
   <header class="topbar">
     <a class="brand" href="#">♫ NINI CHILL</a>
     <span class="top-label">YOUR MUSIC SPACE</span>
   </header>
 
   <main class="container">
-
     <section class="hero">
       <img
         class="cover-image"
         src="IMG_9170.JPG"
         alt="NINI CHILL cover"
       >
-
       <div class="hero-text">
         <p class="eyebrow">A LITTLE SPACE FOR YOU</p>
         <h1>Your music.<br><span>Your moment.</span></h1>
@@ -37,15 +165,11 @@
 
       <article class="track-card">
         <div class="music-icon">♫</div>
-
         <div class="track-info">
           <h3>Nene song</h3>
           <p>NINI CHILL · Instrumental</p>
         </div>
-
-        <button class="play-button" aria-label="Play Nene song">
-          ▶
-        </button>
+        <button class="play-button" aria-label="Play Nene song">▶</button>
       </article>
 
       <p class="small-note">More music coming soon.</p>
@@ -57,30 +181,36 @@
       <p class="description">Share what this music makes you feel.</p>
 
       <label for="comment-name">Your name</label>
-      <input id="comment-name" type="text"
-        placeholder="Enter your name" maxlength="40">
+      <input
+        id="comment-name"
+        type="text"
+        placeholder="Enter your name"
+        maxlength="40"
+        autocomplete="name"
+      >
 
       <label for="comment-text">Your comment</label>
-      <textarea id="comment-text"
+      <textarea
+        id="comment-text"
         placeholder="Write something kind..."
-        maxlength="500" rows="4"></textarea>
+        maxlength="500"
+        rows="4"
+      ></textarea>
 
-      <button id="comment-submit" class="comment-button">
+      <button id="comment-submit" class="comment-button" type="button">
         Post comment
       </button>
 
-      <p id="comment-status" class="small-note">
-        Online comments will be available after setup.
-      </p>
-
+      <p id="comment-status" class="small-note">Loading comments...</p>
       <div id="comment-list"></div>
     </section>
-
   </main>
 
   <footer>Made with care ♡ NINI CHILL</footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="tracks.js"></script>
   <script src="app.js"></script>
+  <script src="comments.js"></script>
 </body>
 </html>
