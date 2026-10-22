@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,46 +13,48 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#">♫ NINI CHILL</a>
-    <span class="status">YOUR MUSIC SPACE</span>
+    <span class="top-label">YOUR MUSIC SPACE</span>
   </header>
 
   <main class="container">
-    <section class="welcome">
-      <p class="eyebrow">A LITTLE SPACE FOR YOU</p>
-      <h1>Your music.<br><span>Your moment.</span></h1>
-      <p class="intro">
-        Take a breath, slow down, and enjoy the music.
-      </p>
+    <section class="hero">
+      <img
+        class="cover-image"
+        src="cover.jpg"
+        alt="NINI CHILL cover artwork"
+      >
+      <div class="hero-text">
+        <p class="eyebrow">A LITTLE SPACE FOR YOU</p>
+        <h1>Your music.<br><span>Your moment.</span></h1>
+        <p>Take a breath, slow down, and enjoy the music.</p>
+      </div>
     </section>
 
-    <section class="library">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">THE COLLECTION</p>
-          <h2>Listen & unwind</h2>
-        </div>
-        <span class="count">01 TRACK</span>
-      </div>
+    <section class="music-section">
+      <p class="eyebrow">THE COLLECTION</p>
+      <h2>Listen & unwind</h2>
 
-      <article class="track">
-        <div class="cover">♫</div>
+      <article class="track-card">
+        <div class="music-icon">♫</div>
         <div class="track-info">
           <h3>Nene song</h3>
           <p>NINI CHILL · Instrumental</p>
+          <span class="track-tag">NOW PLAYING AVAILABLE</span>
         </div>
-        <button class="play-button" data-track="0"
-          aria-label="Play Nene song">▶</button>
+        <button class="play-button" aria-label="Play Nene song">
+          ▶
+        </button>
       </article>
 
-      <p class="note">
+      <p class="small-note">
         More music will find its way here soon.
       </p>
     </section>
 
-    <section class="comments">
+    <section class="comments-section">
       <p class="eyebrow">YOUR THOUGHTS</p>
       <h2>Leave a comment</h2>
-      <p class="intro">
+      <p class="description">
         Share what this music makes you feel.
       </p>
 
@@ -68,7 +71,7 @@
         Post comment
       </button>
 
-      <p id="comment-status" class="note">
+      <p id="comment-status" class="small-note">
         Comments are not connected to online storage yet.
       </p>
       <div id="comment-list"></div>
