@@ -1,216 +1,128 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="cozy">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f2e9">
-  <meta name="description" content="NINI CHILL — a little space for music, rest, and calm moments.">
-  <title>NINI CHILL</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      background: #f5f2e9;
-      color: #343c35;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f2e9" id="meta-theme-color">
+<meta name="description" content="NINI CHILL - a little peace in your day.">
+<title>NINI CHILL</title>
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("nini-theme");
+    if (t === "bw" || t === "cozy") {
+      document.documentElement.setAttribute("data-theme", t);
     }
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding: 18px 6%;
-      border-bottom: 1px solid #dedfd3;
-    }
-    .brand {
-      color: #34463b;
-      font-weight: 800;
-      text-decoration: none;
-      font-size: 20px;
-    }
-    .top-label, .eyebrow {
-      color: #718273;
-      font-size: 11px;
-      letter-spacing: 2px;
-    }
-    .container {
-      max-width: 760px;
-      margin: auto;
-      padding: 28px 18px;
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 24px;
-    }
-    .cover-image {
-      width: 100%;
-      display: block;
-      border-radius: 18px;
-      object-fit: cover;
-    }
-    h1 {
-      font-size: clamp(30px, 7vw, 48px);
-      line-height: 1.12;
-      margin: 12px 0;
-    }
-    h1 span { color: #718777; }
-    .hero-text p:not(.eyebrow) {
-      color: #737970;
-      line-height: 1.7;
-    }
-    .music-section, .comments-section {
-      margin-top: 38px;
-      padding: 24px;
-      background: #fffdf7;
-      border: 1px solid #e5e4d9;
-      border-radius: 20px;
-    }
-    h2 { margin: 8px 0 18px; font-size: 24px; }
-    .track-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px;
-      background: #f0f1e8;
-      border-radius: 14px;
-    }
-    .music-icon {
-      display: grid;
-      place-items: center;
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-      background: #dce3d6;
-      border-radius: 12px;
-      font-size: 22px;
-    }
-    .track-info { flex: 1; min-width: 0; }
-    .track-info h3 { margin: 0 0 5px; font-size: 16px; }
-    .track-info p { margin: 0; color: #7b8178; font-size: 13px; }
-    .play-button, .comment-button {
-      border: 0;
-      border-radius: 999px;
-      background: #526b58;
-      color: white;
-      padding: 12px 17px;
-      font-size: 15px;
-      cursor: pointer;
-    }
-    .small-note, .description { color: #7b8178; font-size: 13px; line-height: 1.6; }
-    .comments-section label {
-      display: block;
-      margin: 16px 0 7px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .comments-section input, .comments-section textarea {
-      box-sizing: border-box;
-      display: block;
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #d8dcd1;
-      border-radius: 10px;
-      background: #fff;
-      color: #343c35;
-      font: inherit;
-    }
-    .comments-section textarea { resize: vertical; }
-    .comment-button { margin-top: 14px; }
-    .comment-button:disabled { opacity: .6; }
-    #comment-list { margin-top: 18px; overflow-wrap: anywhere; }
-    #comment-list article p { white-space: pre-wrap; line-height: 1.5; }
-    #comment-list article small { color: #7b8178; }
-    footer {
-      text-align: center;
-      padding: 25px 12px 35px;
-      color: #7b8178;
-      font-size: 13px;
-    }
-    @media (max-width: 540px) {
-      .hero { grid-template-columns: 1fr; }
-      .cover-image { max-height: 280px; }
-      .hero-text { padding: 0 4px; }
-      .music-section, .comments-section { padding: 18px; }
-      .top-label { font-size: 9px; letter-spacing: 1px; }
-    }
-  </style>
+  } catch (e) {}
+})();
+</script>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#">♫ NINI CHILL</a>
-    <span class="top-label">YOUR MUSIC SPACE</span>
-  </header>
 
-  <main class="container">
-    <section class="hero">
-      <img
-        class="cover-image"
-        src="IMG_9170.JPG"
-        alt="NINI CHILL cover"
-      >
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand-block">
+      <a class="brand" href="#home">NINI CHILL</a>
+      <p class="tagline">A little peace in your day</p>
+    </div>
+    <div class="theme-switch" role="group" aria-label="Theme">
+      <button type="button" id="theme-cozy" class="theme-btn" aria-pressed="true" aria-label="Switch to Cozy theme">Cozy</button>
+      <button type="button" id="theme-bw" class="theme-btn" aria-pressed="false" aria-label="Switch to Black and White theme">B&amp;W</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="home" class="section" aria-labelledby="hero-title">
+    <div class="hero">
+      <img class="cover-image" src="IMG_9170.JPG" alt="NINI CHILL cover artwork">
       <div class="hero-text">
-        <p class="eyebrow">A LITTLE SPACE FOR YOU</p>
-        <h1>Your music.<br><span>Your moment.</span></h1>
-        <p>Take a breath, slow down, and enjoy the music.</p>
+        <p class="eyebrow">NINI CHILL</p>
+        <h1 id="hero-title">Slow down. Press play.</h1>
+        <p class="lead">Calm instrumental music for studying, resting, and quiet moments.</p>
       </div>
-    </section>
+    </div>
 
-    <section class="music-section">
-      <p class="eyebrow">THE COLLECTION</p>
-      <h2>Listen &amp; unwind</h2>
+    <h2 class="section-title">Explore music</h2>
+    <ul class="cards">
+      <li class="card card-1">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg>
+        <h3>Study &amp; Focus</h3>
+        <p>Playlist coming soon</p>
+      </li>
+      <li class="card card-2">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+        <h3>Slow Moments</h3>
+        <p>Playlist coming soon</p>
+      </li>
+      <li class="card card-3">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/><path d="M5 19c3-5 6-8 10-10"/></svg>
+        <h3>Relax</h3>
+        <p>Playlist coming soon</p>
+      </li>
+    </ul>
+  </section>
 
-      <article class="track-card">
-        <div class="music-icon">♫</div>
-        <div class="track-info">
-          <h3>Nene song</h3>
-          <p>NINI CHILL · Instrumental</p>
-        </div>
-        <button class="play-button" aria-label="Play Nene song">▶</button>
-      </article>
+  <section id="library" class="section" aria-labelledby="library-title">
+    <h2 class="section-title" id="library-title">Music library</h2>
+    <ul class="track-list" id="library-list"></ul>
+  </section>
 
-      <p class="small-note">More music coming soon.</p>
-    </section>
+  <section id="favorites" class="section" aria-labelledby="favorites-title">
+    <h2 class="section-title" id="favorites-title">Favorites</h2>
+    <p class="empty" id="favorites-empty">No favorites yet. Tap the heart on a track to save it here.</p>
+    <ul class="track-list" id="favorites-list"></ul>
+  </section>
 
-    <section class="comments-section">
-      <p class="eyebrow">YOUR THOUGHTS</p>
-      <h2>Leave a comment</h2>
-      <p class="description">Share what this music makes you feel.</p>
+  <footer class="site-footer">Made with care &#9825; NINI CHILL</footer>
+</main>
 
-      <label for="comment-name">Your name</label>
-      <input
-        id="comment-name"
-        type="text"
-        placeholder="Enter your name"
-        maxlength="40"
-        autocomplete="name"
-      >
+<div class="dock">
+  <div class="player" role="region" aria-label="Music player">
+    <div class="player-top">
+      <div class="player-meta">
+        <p class="player-title" id="player-title">No track selected</p>
+        <p class="player-artist" id="player-artist"></p>
+      </div>
+      <div class="player-controls">
+        <button type="button" id="btn-prev" class="ctrl" aria-label="Previous track">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M6 5h2v14H6zM20 5v14L9 12z" fill="currentColor"/></svg>
+        </button>
+        <button type="button" id="btn-play" class="ctrl ctrl-play" aria-label="Play">
+          <svg id="icon-play" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          <svg id="icon-pause" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false" hidden><path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/></svg>
+        </button>
+        <button type="button" id="btn-next" class="ctrl" aria-label="Next track">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M16 5h2v14h-2zM4 5v14l11-7z" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="player-seek">
+      <span class="time" id="time-current">0:00</span>
+      <input type="range" id="seek" class="seek" min="0" max="1000" step="1" value="0" aria-label="Seek position">
+      <span class="time" id="time-total">0:00</span>
+    </div>
+    <p class="sr-only" id="player-status" role="status" aria-live="polite"></p>
+  </div>
 
-      <label for="comment-text">Your comment</label>
-      <textarea
-        id="comment-text"
-        placeholder="Write something kind..."
-        maxlength="500"
-        rows="4"
-      ></textarea>
+  <nav class="bottom-nav" aria-label="Main">
+    <a href="#home" class="nav-link" data-section="home" aria-current="page">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="#library" class="nav-link" data-section="library">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+      <span>Library</span>
+    </a>
+    <a href="#favorites" class="nav-link" data-section="favorites">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z"/></svg>
+      <span>Favorites</span>
+    </a>
+  </nav>
+</div>
 
-      <button id="comment-submit" class="comment-button" type="button">
-        Post comment
-      </button>
-
-      <p id="comment-status" class="small-note">Loading comments...</p>
-      <div id="comment-list"></div>
-    </section>
-  </main>
-
-  <footer>Made with care ♡ NINI CHILL</footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="tracks.js"></script>
-  <script src="app.js"></script>
-  <script src="comments.js"></script>
+<script src="player.js"></script>
 </body>
 </html>
