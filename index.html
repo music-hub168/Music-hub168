@@ -1,27 +1,29 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f2e9">
   <title>NINI CHILL</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header class="topbar">
     <a class="brand" href="#">♫ NINI CHILL</a>
     <span class="top-label">YOUR MUSIC SPACE</span>
   </header>
 
-  <img
-  class="cover-image"
-  src="cover.jpg"
-  alt="NINI CHILL cover artwork"
->
+  <main class="container">
+
+    <section class="hero">
+      <img
+        class="cover-image"
+        src="cover.jpg"
+        alt="NINI CHILL cover"
       >
+
       <div class="hero-text">
         <p class="eyebrow">A LITTLE SPACE FOR YOU</p>
         <h1>Your music.<br><span>Your moment.</span></h1>
@@ -31,31 +33,28 @@
 
     <section class="music-section">
       <p class="eyebrow">THE COLLECTION</p>
-      <h2>Listen & unwind</h2>
+      <h2>Listen &amp; unwind</h2>
 
       <article class="track-card">
         <div class="music-icon">♫</div>
+
         <div class="track-info">
           <h3>Nene song</h3>
           <p>NINI CHILL · Instrumental</p>
-          <span class="track-tag">NOW PLAYING AVAILABLE</span>
         </div>
+
         <button class="play-button" aria-label="Play Nene song">
           ▶
         </button>
       </article>
 
-      <p class="small-note">
-        More music will find its way here soon.
-      </p>
+      <p class="small-note">More music coming soon.</p>
     </section>
 
     <section class="comments-section">
       <p class="eyebrow">YOUR THOUGHTS</p>
       <h2>Leave a comment</h2>
-      <p class="description">
-        Share what this music makes you feel.
-      </p>
+      <p class="description">Share what this music makes you feel.</p>
 
       <label for="comment-name">Your name</label>
       <input id="comment-name" type="text"
@@ -71,10 +70,12 @@
       </button>
 
       <p id="comment-status" class="small-note">
-        Comments are not connected to online storage yet.
+        Online comments will be available after setup.
       </p>
+
       <div id="comment-list"></div>
     </section>
+
   </main>
 
   <footer>Made with care ♡ NINI CHILL</footer>
